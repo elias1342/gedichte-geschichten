@@ -1,0 +1,41 @@
+{
+  "gedichte": [
+    {
+      "id": "g1",
+      "title": "Herbstabend",
+      "date": "2024-10-12",
+      "snippet": "Die Blätter fallen golden nieder, der Wind trägt alte Lieder — und in der Stille spricht der Herbst von allem, was gewesen.",
+      "text": "Die Blätter fallen golden nieder,\nDer Wind trägt alte Lieder,\nDie Bäume stehen still und schweigen,\nDer Nebel zieht durch alle Zweigen.\n\nIm Garten brennt die letzte Rose,\nBevor der Winter kommt, der strenge,\nNoch einmal leuchtet diese Stunde,\nIm Abendlicht, in sanfter Runde.\n\nIch stehe lang am Fenster, warte,\nUnd halte fest an dieser Karte —\nDes Herbstes sanfter, letzter Blick,\nBevor er geht und kehrt nicht zurück."
+    },
+    {
+      "id": "g2",
+      "title": "Mondlicht über dem See",
+      "date": "2024-08-20",
+      "snippet": "Der Mond wirft Silber auf das Wasser, die Nacht liegt still wie Glas — und wer am Ufer sitzt, vergisst die Zeit.",
+      "text": "Der Mond wirft Silber auf das Wasser,\nDie Nacht liegt still wie Glas,\nKein Windhauch rührt die spiegelklare Fläche,\nNur Sterne spiegeln sich im Naß.\n\nAm Ufer sitz ich, ganz alleine,\nUnd höre, was die Stille sagt:\nDass alles Große kommt vom Kleinen,\nDass jeder Morgen neu erwacht.\n\nDie Zeit steht hier, sie hält den Atem,\nDer See träumt seinen ewigen Traum,\nUnd ich vergesse alle Schatten\nUnd werde selbst zu Licht und Schaum."
+    },
+    {
+      "id": "g3",
+      "title": "Morgengebet",
+      "date": "2024-03-15",
+      "snippet": "Bevor der Tag sich öffnet, liegt noch die Welt in Ruh — und in der Stille findet sich ein Dank, der keine Worte braucht.",
+      "text": "Bevor der Tag sich öffnet,\nLiegt noch die Welt in Ruh,\nDer erste Vogel pfeift schon,\nDie Zeit geht langsam zu.\n\nIch dank für diesen Morgen,\nFür Licht, das kommt und geht,\nFür alles, was verborgen,\nUnd alles, was besteht.\n\nGib mir die Kraft zum Gehen,\nDen Mut, die Wahrheit zu sehn,\nDas Herz, das Gute zu wählen,\nWenn Winde um mich wehn."
+    }
+  ],
+  "kurzgeschichten": [
+    {
+      "id": "k1",
+      "title": "Der Zug um Mitternacht",
+      "date": "2024-11-03",
+      "snippet": "Es war kurz vor Mitternacht, als Maria zum ersten Mal seit zwanzig Jahren wieder auf diesem Bahnsteig stand — und alles war noch da.",
+      "text": "Es war kurz vor Mitternacht, als Maria zum ersten Mal seit zwanzig Jahren wieder auf diesem Bahnsteig stand. Der Frost hatte sich in die Steinfliesen gefressen, und ihr Atem bildete kleine weiße Wolken in der kalten Luft.\n\nDer Bahnhof war leer. Nur eine alte Frau saß auf der Holzbank am Ende des Bahnsteigs, einen schwarzen Koffer zwischen den Beinen, und starrte auf die leeren Gleise.\n\nMaria zögerte. Dann setzte sie sich neben sie.\n\n„Warten Sie auch auf den Zug nach Hause?" fragte die alte Frau, ohne sie anzusehen.\n\n„Ich weiß noch nicht", sagte Maria, „wo das ist."\n\nDie Frau nickte, als wäre das die verständlichste Antwort der Welt. „Dann warten wir zusammen", sagte sie.\n\nSie saßen schweigend, bis der Zug um Mitternacht in den Bahnhof rollte, seine Fenster hell erleuchtet wie Laternen im Dunkeln. Maria stieg ein. Die alte Frau blieb.\n\nIm Fahren sah Maria noch einmal zurück. Die Bank war leer.\n\nSie fuhr die ganze Nacht. Als die Sonne aufging, wusste sie, wo sie aussteigen würde."
+    },
+    {
+      "id": "k2",
+      "title": "Das blaue Kleid",
+      "date": "2024-07-08",
+      "snippet": "Das blaue Kleid hing seit dreißig Jahren im Schrank. Anna hatte es nie weggeworfen — manche Dinge gehören nicht der Zeit.",
+      "text": "Das blaue Kleid hing seit dreißig Jahren im Schrank. Anna hatte es nie weggeworfen, obwohl es ihr schon lange nicht mehr passte und die Mode es längst vergessen hatte.\n\nAls ihre Tochter Clara an einem Sonntagnachmittag die Schranktüren öffnete, um alten Ballast auszumisten, blieb ihr Blick sofort daran hängen.\n\n„Mama, was ist das für ein Kleid?"\n\nAnna trat näher. Stoff — ein tiefes Blau wie ein Sommerhimmel kurz vor dem Gewitter. Sie streckte die Hand aus und berührte den Stoff.\n\n„Das war das Kleid, das ich trug, als dein Vater mich zum ersten Mal fragte, ob ich mit ihm tanzen wolle." Sie lächelte. „Er hat mich auf die Zehen getreten, und trotzdem wollte ich nie aufhören."\n\nClara hielt inne. Dann nahm sie das Kleid nicht aus dem Schrank.\n\n„Das bleibt", sagte sie leise.\n\nAnna nickte. Manche Dinge gehören nicht der Zeit. Sie gehören dem Herzen."
+    }
+  ]
+}

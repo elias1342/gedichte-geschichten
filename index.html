@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gedichte &amp; Geschichten</title>
+  <meta name="description" content="Gedichte und Kurzgeschichten — persönliche Texte voller Stimmung und Gefühl." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+
+  <!-- ── Header ────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo">Gedichte &amp; <span>Geschichten</span></a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="/">Start</a>
+        <a href="/gedichte">Gedichte</a>
+        <a href="/kurzgeschichten">Kurzgeschichten</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Main ──────────────────────────────────────────────── -->
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <span class="hero-ornament" aria-hidden="true">❧</span>
+      <h1>Worte, die bleiben</h1>
+      <p>Gedichte und Kurzgeschichten — persönlich, ehrlich, aus dem Leben.</p>
+    </section>
+
+    <!-- Gedichte section -->
+    <section class="section" aria-labelledby="heading-gedichte">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="heading-gedichte">Gedichte</h2>
+          <a href="/gedichte" class="section-link">Alle Gedichte →</a>
+        </div>
+        <div class="card-grid" id="gedichte-grid">
+          <p class="loading-msg">Wird geladen …</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kurzgeschichten section -->
+    <section class="section" aria-labelledby="heading-geschichten">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="heading-geschichten">Kurzgeschichten</h2>
+          <a href="/kurzgeschichten" class="section-link">Alle Geschichten →</a>
+        </div>
+        <div class="card-grid" id="kurzgeschichten-grid">
+          <p class="loading-msg">Wird geladen …</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

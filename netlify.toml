@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/gedichte"
+  to = "/gedichte.html"
+  status = 200
+
+[[redirects]]
+  from = "/kurzgeschichten"
+  to = "/kurzgeschichten.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
