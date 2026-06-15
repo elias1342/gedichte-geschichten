@@ -1,17 +1,18 @@
 [build]
-  publish = "."
+  publish   = "."
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/gedichte"
-  to = "/gedichte.html"
+  to   = "/gedichte.html"
   status = 200
 
 [[redirects]]
   from = "/kurzgeschichten"
-  to = "/kurzgeschichten.html"
+  to   = "/kurzgeschichten.html"
   status = 200
 
 [[redirects]]
   from = "/admin"
-  to = "/admin.html"
+  to   = "/admin.html"
   status = 200

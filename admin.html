@@ -51,28 +51,13 @@
   </div>
 
   <!-- ── Admin form (hidden until unlocked) ────────────────── -->
-  <!--
-    IMPORTANT: This form must stay in the HTML so Netlify's build bot
-    can detect and register it. The JS below simply shows/hides it.
-  -->
   <main class="admin-content" id="admin-content" style="display:none">
     <div class="container" style="max-width: 720px;">
 
       <h1>Neuen Text einreichen</h1>
-      <p>Fülle das Formular aus und klicke auf „Einreichen". Dein Text wird dann per E-Mail übermittelt und kann anschließend veröffentlicht werden.</p>
+      <p>Fülle das Formular aus und klicke auf „Veröffentlichen". Der Text erscheint dann sofort auf der Website.</p>
 
-      <form
-        name="text-einreichung"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        id="submission-form"
-      >
-        <!-- Netlify hidden fields -->
-        <input type="hidden" name="form-name" value="text-einreichung" />
-        <p style="display:none">
-          <label>Nicht ausfüllen: <input name="bot-field" /></label>
-        </p>
+      <form id="submission-form">
 
         <div class="form-group">
           <label for="field-title">Titel *</label>
@@ -129,30 +114,32 @@
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn-primary">✉ Einreichen</button>
+          <button type="submit" class="btn-primary" id="submit-btn">✦ Veröffentlichen</button>
           <button type="button" class="btn-secondary" onclick="resetForm()">Zurücksetzen</button>
         </div>
 
         <div class="form-success" id="form-success">
-          <strong>Danke!</strong> Dein Text wurde erfolgreich übermittelt. Er wird bald veröffentlicht. 🌿
+          <strong>Veröffentlicht!</strong> Der Text ist jetzt auf der Website. Es kann bis zu einer Minute dauern, bis er sichtbar ist. 🌿
         </div>
+
+        <div class="form-error" id="form-error" style="display:none; background:#fdf0f0; border:1px solid #e8b4b4; border-radius:6px; padding:1rem 1.25rem; margin-top:1.5rem; color:#8b2020; font-size:0.95rem;">
+          Fehler beim Veröffentlichen. Bitte versuche es erneut.
+        </div>
+
       </form>
 
       <hr style="margin: 3rem 0; border: none; border-top: 1px solid var(--border);" />
 
       <details style="color: var(--muted); font-size: 0.875rem; line-height: 1.7;">
         <summary style="cursor: pointer; font-weight: 600; color: var(--accent); margin-bottom: 0.75rem;">
-          Wie funktioniert das?
+          Tipps zum Ausfüllen
         </summary>
         <p style="margin-bottom: 0.75rem;">
-          1. Fülle das Formular aus und klicke auf „Einreichen".<br />
-          2. Dein Text wird automatisch per E-Mail weitergeleitet.<br />
-          3. Der Empfänger kopiert den Text in die Datei <code>content.json</code>.<br />
-          4. Nach dem nächsten GitHub-Push erscheint der Text auf der Website.
+          <strong>Für Gedichte:</strong> Trenne Strophen durch eine Leerzeile. Jede Verszeile kommt in eine eigene Zeile.<br />
+          <strong>Für Prosa:</strong> Absätze ebenfalls durch eine Leerzeile trennen.
         </p>
         <p>
-          <strong>Für Gedichte:</strong> Trenne Strophen durch eine Leerzeile.<br />
-          <strong>Für Prosa:</strong> Absätze ebenfalls durch eine Leerzeile trennen.
+          <strong>Kurzvorschau:</strong> Ein bis zwei Sätze, die neugierig machen — dieser Text erscheint auf der Startseite als Vorschau.
         </p>
       </details>
 
@@ -161,8 +148,7 @@
 
   <!-- ── Footer ────────────────────────────────────────────── -->
   <footer class="site-footer">
-    <div class="container">
-    </div>
+    <div class="container"></div>
   </footer>
 
   <script>
@@ -178,10 +164,7 @@
         document.getElementById('admin-content').style.display = 'block';
         error.style.display = 'none';
         document.getElementById('field-title').focus();
-
-        /* pre-fill today's date */
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('field-date').value = today;
+        document.getElementById('field-date').value = new Date().toISOString().split('T')[0];
       } else {
         error.style.display = 'block';
         document.getElementById('pw-input').value = '';
@@ -192,43 +175,45 @@
     function resetForm() {
       document.getElementById('submission-form').reset();
       document.getElementById('form-success').style.display = 'none';
-      const today = new Date().toISOString().split('T')[0];
-      document.getElementById('field-date').value = today;
+      document.getElementById('form-error').style.display = 'none';
+      document.getElementById('field-date').value = new Date().toISOString().split('T')[0];
     }
 
-    /* Show success message on Netlify redirect */
-    (function () {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('success') === '1') {
-        /* auto-unlock to show the success state */
-        document.getElementById('lock-screen').style.display = 'none';
-        document.getElementById('admin-content').style.display = 'block';
-        document.getElementById('form-success').style.display = 'block';
-        window.scrollTo(0, 0);
-      }
-    })();
-
-    /* Handle form submit → show inline success instead of redirect */
-    document.getElementById('submission-form').addEventListener('submit', function (e) {
+    document.getElementById('submission-form').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const form = this;
-      const data = new FormData(form);
 
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      })
-        .then(() => {
-          document.getElementById('form-success').style.display = 'block';
-          form.reset();
-          const today = new Date().toISOString().split('T')[0];
-          document.getElementById('field-date').value = today;
-          document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        })
-        .catch(() => {
-          alert('Fehler beim Senden. Bitte versuche es erneut.');
+      const btn       = document.getElementById('submit-btn');
+      const successEl = document.getElementById('form-success');
+      const errorEl   = document.getElementById('form-error');
+
+      btn.disabled    = true;
+      btn.textContent = 'Wird veröffentlicht …';
+      successEl.style.display = 'none';
+      errorEl.style.display   = 'none';
+
+      const data = new URLSearchParams(new FormData(this)).toString();
+
+      try {
+        const res = await fetch('/.netlify/functions/submit', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body:    data
         });
+
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+
+        successEl.style.display = 'block';
+        this.reset();
+        document.getElementById('field-date').value = new Date().toISOString().split('T')[0];
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      } catch (err) {
+        errorEl.style.display = 'block';
+        console.error(err);
+      } finally {
+        btn.disabled    = false;
+        btn.textContent = '✦ Veröffentlichen';
+      }
     });
   </script>
 
